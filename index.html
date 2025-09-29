@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TOEIC (400-500) set-1 – Boo-riculum</title>
+  <title>TOEIC (450-550) set-1 – Boo-riculum</title>
   <link rel="icon" type="image/png" href="booha-ghost.png">
   <style>
     :root { --ink:#222; --muted:#444; --accent:#0b78ff; --ok:#22c55e; --bad:#ef4444; }
@@ -81,7 +81,7 @@
 <body>
   <div class="wrap">
     <header>
-      <h1><img src="booha-ghost.png" alt="Booha ghost"> Boo-riculum – TOEIC (400-500) set-1</h1>
+      <h1><img src="booha-ghost.png" alt="Booha ghost"> Boo-riculum – TOEIC (450-550) set-1</h1>
       <div class="controls">
         <select id="mode" aria-label="Mode">
           <option value="vocab-j2e">Vocab: 🇯🇵 → 🇺🇸</option>
@@ -120,99 +120,98 @@
   </div>
 
   <script>
-    // ---------------- Data ----------------
+    // ---------------- Data (TOEIC 450–550) ----------------
     const VOCAB = [
-      // Places & common nouns/verbs (for vocab drills)
-      { en:'station', ja:'駅', hira:'えき' },
-      { en:'hotel', ja:'ホテル', hira:'ほてる' },
-      { en:'restaurant', ja:'レストラン', hira:'れすとらん' },
-      { en:'store', ja:'店', hira:'みせ' },
-      { en:'bank', ja:'銀行', hira:'ぎんこう' },
-      { en:'park', ja:'公園', hira:'こうえん' },
-      { en:'bus', ja:'バス', hira:'ばす' },
-      { en:'train', ja:'電車', hira:'でんしゃ' },
-      { en:'ticket', ja:'切符', hira:'きっぷ' },
-      { en:'bill (check)', ja:'会計', hira:'かいけい' },
-      { en:'to pay', ja:'払う', hira:'はらう' },
-      { en:'to leave (depart)', ja:'出発する', hira:'しゅっぱつする' },
-      { en:'to arrive', ja:'到着する', hira:'とうちゃくする' },
-      { en:'to order', ja:'注文する', hira:'ちゅうもんする' },
-      { en:'to ask', ja:'たずねる', hira:'たずねる' },
-      { en:'to check', ja:'確認する', hira:'かくにんする' },
-      { en:'to walk', ja:'歩く', hira:'あるく' },
-      { en:'to take (a train)', ja:'乗る', hira:'のる' },
+      { en:'invoice', ja:'請求書', hira:'せいきゅうしょ' },
+      { en:'schedule', ja:'予定', hira:'よてい' },
+      { en:'appointment', ja:'予約', hira:'よやく' },
+      { en:'deadline', ja:'締め切り', hira:'しめきり' },
+      { en:'shipment', ja:'出荷', hira:'しゅっか' },
+      { en:'to confirm', ja:'確認する', hira:'かくにんする' },
+      { en:'to reschedule', ja:'予定を変更する', hira:'よていを へんこうする' },
+      { en:'department', ja:'部署', hira:'ぶしょ' },
+      { en:'supervisor', ja:'上司', hira:'じょうし' },
+      { en:'conference room', ja:'会議室', hira:'かいぎしつ' },
+      { en:'to attach (file)', ja:'添付する', hira:'てんぷする' },
+      { en:'refund', ja:'返金', hira:'へんきん' },
+      { en:'discount', ja:'割引', hira:'わりびき' },
+      { en:'brochure', ja:'パンフレット', hira:'ぱんふれっと' },
+      { en:'maintenance', ja:'メンテナンス', hira:'めんてなんす' },
+      { en:'supplier', ja:'納入業者', hira:'のうにゅう ぎょうしゃ' },
+      { en:'company policy', ja:'会社の規定', hira:'かいしゃの きてい' },
+      { en:'feedback', ja:'フィードバック', hira:'ふぃーどばっく' },
     ];
 
     const SENTENCES = [
-      { en:'I bought a ticket at the station.', ja:'私は駅で切符を買いました。', hira:'わたしは えきで きっぷを かいました。' },
-      { en:'She is waiting for the bus.', ja:'彼女はバスを待っています。', hira:'かのじょは ばすを まっています。' },
-      { en:'They arrived at the hotel late.', ja:'彼らはホテルに遅れて到着しました。', hira:'かれらは ほてるに おくれて とうちゃくしました。' },
-      { en:'We ordered food at the restaurant.', ja:'私たちはレストランで料理を注文しました。', hira:'わたしたちは れすとらんで りょうりを ちゅうもんしました。' },
-      { en:'He is walking to the park.', ja:'彼は公園に歩いています。', hira:'かれは こうえんに あるいています。' },
-      { en:'Please check the time on the ticket.', ja:'切符の時間を確認してください。', hira:'きっぷの じかんを かくにんして ください。' },
-      { en:'I will take the train to the city.', ja:'私は電車で街に行きます。', hira:'わたしは でんしゃで まちに いきます。' },
-      { en:'We paid the bill at the restaurant.', ja:'私たちはレストランで会計をしました。', hira:'わたしたちは れすとらんで かいけいを しました。' },
-      { en:'The bus leaves at nine.', ja:'バスは9時に出発します。', hira:'ばすは くじに しゅっぱつします。' },
-      { en:'He asked a clerk for help.', ja:'彼は店員に助けを求めました。', hira:'かれは てんいんに たすけを もとめました。' },
-      { en:'The store opens at 10 a.m.', ja:'店は午前10時に開きます。', hira:'みせは ごぜん じゅうじに あきます。' },
-      { en:'She is paying money at the bank.', ja:'彼女は銀行でお金を払っています。', hira:'かのじょは ぎんこうで おかねを はらっています。' },
+      { en:'Please send the invoice by Friday.', ja:'金曜日までに請求書を送ってください。', hira:'きんようび までに せいきゅうしょを おくって ください。' },
+      { en:'The deadline was extended by two days.', ja:'締め切りは2日延長されました。', hira:'しめきりは ふつか えんちょう されました。' },
+      { en:'We reserved the conference room at 3 p.m.', ja:'午後3時に会議室を予約しました。', hira:'ごご さんじに かいぎしつを よやく しました。' },
+      { en:'I attached the brochure to the email.', ja:'メールにパンフレットを添付しました。', hira:'めーるに ぱんふれっとを てんぷ しました。' },
+      { en:'Our supplier will ship the parts tomorrow.', ja:'納入業者は明日部品を出荷します。', hira:'のうにゅう ぎょうしゃは あした ぶひんを しゅっか します。' },
+      { en:'Could you confirm the schedule with your supervisor?', ja:'上司と予定を確認していただけますか。', hira:'じょうしと よていを かくにんして いただけますか。' },
+      { en:'Maintenance will take about one hour.', ja:'メンテナンスには約1時間かかります。', hira:'めんてなんすには やく いちじかん かかります。' },
+      { en:'We offered a 10% discount to new customers.', ja:'新規のお客様に10％の割引を提供しました。', hira:'しんきの おきゃくさまに じゅっぱーせんとの わりびきを ていきょう しました。' },
+      { en:'She asked for a refund because the item was damaged.', ja:'商品に傷があったため、彼女は返金を求めました。', hira:'しょうひんに きずが あったため、かのじょは へんきんを もとめました。' },
+      { en:'Let’s reschedule the meeting for next Tuesday.', ja:'会議を来週の火曜日に予定変更しましょう。', hira:'かいぎを らいしゅうの かようびに よてい へんこう しましょう。' },
+      { en:'Please leave your feedback after the training.', ja:'研修の後にフィードバックをお願いします。', hira:'けんしゅうの あとに ふぃーどばっくを おねがいします。' },
+      { en:'The department will move to the fourth floor.', ja:'部署は4階に移動します。', hira:'ぶしょは よんかいに いどう します。' },
     ];
 
     const QA = [
-      { q_en:'Where did you buy the ticket?', q_ja:'あなたはどこで切符を買いましたか？', q_hira:'あなたは どこで きっぷを かいましたか？',
-        a_en:'I bought it at the station.', a_ja:'駅で買いました。', a_hira:'えきで かいました。' },
-      { q_en:'Who is waiting for the bus?', q_ja:'バスを待っているのは誰ですか？', q_hira:'ばすを まっているのは だれですか？',
-        a_en:'She is waiting for the bus.', a_ja:'彼女がバスを待っています。', a_hira:'かのじょが ばすを まっています。' },
-      { q_en:'When did they arrive at the hotel?', q_ja:'彼らはいつホテルに到着しましたか？', q_hira:'かれらは いつ ほてるに とうちゃくしましたか？',
-        a_en:'They arrived late.', a_ja:'遅れて到着しました。', a_hira:'おくれて とうちゃくしました。' },
-      { q_en:'What did you order at the restaurant?', q_ja:'レストランで何を注文しましたか？', q_hira:'れすとらんで なにを ちゅうもんしましたか？',
-        a_en:'We ordered food.', a_ja:'料理を注文しました。', a_hira:'りょうりを ちゅうもんしました。' },
-      { q_en:'How do you go to the park?', q_ja:'あなたはどうやって公園に行きますか？', q_hira:'あなたは どうやって こうえんに いきますか？',
-        a_en:'I walk to the park.', a_ja:'歩いて公園に行きます。', a_hira:'あるいて こうえんに いきます。' },
-      { q_en:'What time does the bus leave?', q_ja:'バスは何時に出発しますか？', q_hira:'ばすは なんじに しゅっぱつしますか？',
-        a_en:'It leaves at nine.', a_ja:'9時に出発します。', a_hira:'くじに しゅっぱつします。' },
-      { q_en:'Who is paying at the bank?', q_ja:'銀行で払っているのは誰ですか？', q_hira:'ぎんこうで はらっているのは だれですか？',
-        a_en:'She is paying at the bank.', a_ja:'彼女が銀行で払っています。', a_hira:'かのじょが ぎんこうで はらっています。' },
-      { q_en:'Where are they going by train?', q_ja:'彼らは電車でどこに行きますか？', q_hira:'かれらは でんしゃで どこに いきますか？',
-        a_en:'They are going to the city.', a_ja:'街に行きます。', a_hira:'まちに いきます。' },
-      { q_en:'What time does the store open?', q_ja:'店は何時に開きますか？', q_hira:'みせは なんじに あきますか？',
-        a_en:'It opens at 10 a.m.', a_ja:'午前10時に開きます。', a_hira:'ごぜん じゅうじに あきます。' },
-      { q_en:'Who helped the customer?', q_ja:'誰がお客さんを助けましたか？', q_hira:'だれが おきゃくさんを たすけましたか？',
-        a_en:'The clerk helped the customer.', a_ja:'店員が客を助けました。', a_hira:'てんいんが きゃくを たすけました。' },
-      { q_en:'What did you check on the ticket?', q_ja:'切符で何を確認しましたか？', q_hira:'きっぷで なにを かくにんしましたか？',
-        a_en:'I checked the time.', a_ja:'時間を確認しました。', a_hira:'じかんを かくにんしました。' },
-      { q_en:'Who paid the bill?', q_ja:'誰が会計をしましたか？', q_hira:'だれが かいけいを しましたか？',
-        a_en:'We paid the bill.', a_ja:'私たちが会計をしました。', a_hira:'わたしたちが かいけいを しました。' },
+      { q_en:'When do we need to submit the invoice?', q_ja:'いつ請求書を提出する必要がありますか？', q_hira:'いつ せいきゅうしょを ていしゅつする ひつようが ありますか？',
+        a_en:'By Friday.', a_ja:'金曜日までです。', a_hira:'きんようび までです。' },
+      { q_en:'Where is the conference room?', q_ja:'会議室はどこにありますか？', q_hira:'かいぎしつは どこに ありますか？',
+        a_en:'It is on the third floor.', a_ja:'3階にあります。', a_hira:'さんがいに あります。' },
+      { q_en:'Who will confirm the schedule?', q_ja:'誰が予定を確認しますか？', q_hira:'だれが よていを かくにん しますか？',
+        a_en:'My supervisor will.', a_ja:'私の上司です。', a_hira:'わたしの じょうしです。' },
+      { q_en:'What did you attach to the email?', q_ja:'メールに何を添付しましたか？', q_hira:'めーるに なにを てんぷ しましたか？',
+        a_en:'I attached the brochure.', a_ja:'パンフレットを添付しました。', a_hira:'ぱんふれっとを てんぷ しました。' },
+      { q_en:'Why was the deadline extended?', q_ja:'なぜ締め切りが延長されましたか？', q_hira:'なぜ しめきりが えんちょう されましたか？',
+        a_en:'Because the shipment was delayed.', a_ja:'出荷が遅れたからです。', a_hira:'しゅっかが おくれた からです。' },
+      { q_en:'How long will maintenance take?', q_ja:'メンテナンスにはどのくらい時間がかかりますか？', q_hira:'めんてなんすには どのくらい じかんが かかりますか？',
+        a_en:'About one hour.', a_ja:'約1時間です。', a_hira:'やく いちじかんです。' },
+      { q_en:'What discount did you offer?', q_ja:'どのくらいの割引を提供しましたか？', q_hira:'どのくらいの わりびきを ていきょう しましたか？',
+        a_en:'A ten percent discount.', a_ja:'10％の割引です。', a_hira:'じゅっぱーせんとの わりびきです。' },
+      { q_en:'When will the supplier ship the parts?', q_ja:'納入業者はいつ部品を出荷しますか？', q_hira:'のうにゅう ぎょうしゃは いつ ぶひんを しゅっか しますか？',
+        a_en:'Tomorrow morning.', a_ja:'明日の朝です。', a_hira:'あしたの あさです。' },
+      { q_en:'What floor is the department moving to?', q_ja:'部署は何階に移動しますか？', q_hira:'ぶしょは なんがいに いどう しますか？',
+        a_en:'The fourth floor.', a_ja:'4階です。', a_hira:'よんかいです。' },
+      { q_en:'Can we reschedule the meeting?', q_ja:'会議の予定を変更できますか？', q_hira:'かいぎの よていを へんこう できますか？',
+        a_en:'Yes, next Tuesday works.', a_ja:'はい、来週の火曜日が大丈夫です。', a_hira:'はい、らいしゅうの かようびが だいじょうぶです。' },
+      { q_en:'What does the company policy say?', q_ja:'会社の規定には何と書いてありますか？', q_hira:'かいしゃの きていには なにと かいて ありますか？',
+        a_en:'Employees must submit receipts.', a_ja:'従業員は領収書を提出する必要があります。', a_hira:'じゅうぎょういんは りょうしゅうしょを ていしゅつする ひつようが あります。' },
+      { q_en:'Did she receive a refund?', q_ja:'彼女は返金を受け取りましたか？', q_hira:'かのじょは へんきんを うけとりましたか？',
+        a_en:'Yes, she did.', a_ja:'はい、受け取りました。', a_hira:'はい、うけとりました。' },
     ];
 
     const QUIZ = [
-      { cloze:'I ___ a ticket at the station.', answers:['bought'], ja:'私は駅で切符を買いました。', hira:'わたしは えきで きっぷを かいました。', full:'I bought a ticket at the station.' },
-      { cloze:'She is ___ for the bus.', answers:['waiting'], ja:'彼女はバスを待っています。', hira:'かのじょは ばすを まっています。', full:'She is waiting for the bus.' },
-      { cloze:'They ___ at the hotel late.', answers:['arrived'], ja:'彼らはホテルに遅れて到着しました。', hira:'かれらは ほてるに おくれて とうちゃくしました。', full:'They arrived at the hotel late.' },
-      { cloze:'We ___ food at the restaurant.', answers:['ordered'], ja:'私たちはレストランで料理を注文しました。', hira:'わたしたちは れすとらんで りょうりを ちゅうもんしました。', full:'We ordered food at the restaurant.' },
-      { cloze:'He is ___ to the park.', answers:['walking'], ja:'彼は公園に歩いています。', hira:'かれは こうえんに あるいています。', full:'He is walking to the park.' },
-      { cloze:'Please ___ the time on the ticket.', answers:['check'], ja:'切符の時間を確認してください。', hira:'きっぷの じかんを かくにんして ください。', full:'Please check the time on the ticket.' },
-      { cloze:'The bus ___ at nine.', answers:['leaves'], ja:'バスは9時に出発します。', hira:'ばすは くじに しゅっぱつします。', full:'The bus leaves at nine.' },
-      { cloze:'We ___ the bill at the restaurant.', answers:['paid'], ja:'私たちはレストランで会計をしました。', hira:'わたしたちは れすとらんで かいけいを しました。', full:'We paid the bill at the restaurant.' },
-      { cloze:'He ___ a clerk for help.', answers:['asked'], ja:'彼は店員に助けを求めました。', hira:'かれは てんいんに たすけを もとめました。', full:'He asked a clerk for help.' },
-      { cloze:'The store ___ at 10 a.m.', answers:['opens'], ja:'店は午前10時に開きます。', hira:'みせは ごぜん じゅうじに あきます。', full:'The store opens at 10 a.m.' },
-      { cloze:'She is ___ money at the bank.', answers:['paying'], ja:'彼女は銀行でお金を払っています。', hira:'かのじょは ぎんこうで おかねを はらっています。', full:'She is paying money at the bank.' },
-      { cloze:'I will ___ the train to the city.', answers:['take'], ja:'私は電車で街に行きます。', hira:'わたしは でんしゃで まちに いきます。', full:'I will take the train to the city.' },
+      { cloze:'Please ___ the schedule with your supervisor.', answers:['confirm'], ja:'上司と予定を確認してください。', hira:'じょうしと よていを かくにん してください。', full:'Please confirm the schedule with your supervisor.' },
+      { cloze:'The meeting was ___ to next Tuesday.', answers:['rescheduled'], ja:'会議は来週の火曜日に予定変更されました。', hira:'かいぎは らいしゅうの かようびに よてい へんこう されました。', full:'The meeting was rescheduled to next Tuesday.' },
+      { cloze:'Our supplier will ___ the parts tomorrow.', answers:['ship'], ja:'納入業者は明日部品を出荷します。', hira:'のうにゅう ぎょうしゃは あした ぶひんを しゅっか します。', full:'Our supplier will ship the parts tomorrow.' },
+      { cloze:'The ___ is at 5 p.m. today.', answers:['deadline'], ja:'締め切りは本日午後5時です。', hira:'しめきりは ほんじつ ごご ごじです。', full:'The deadline is at 5 p.m. today.' },
+      { cloze:'Please find the ___ attached.', answers:['brochure'], ja:'添付のパンフレットをご確認ください。', hira:'てんぷの ぱんふれっとを ごかくにん ください。', full:'Please find the brochure attached.' },
+      { cloze:'We offered a ten percent ___.', answers:['discount'], ja:'10％の割引を提供しました。', hira:'じゅっぱーせんとの わりびきを ていきょう しました。', full:'We offered a ten percent discount.' },
+      { cloze:'She requested a ___.', answers:['refund'], ja:'彼女は返金を求めました。', hira:'かのじょは へんきんを もとめました。', full:'She requested a refund.' },
+      { cloze:'The department will ___ to the fourth floor.', answers:['move'], ja:'部署は4階に移動します。', hira:'ぶしょは よんかいに いどう します。', full:'The department will move to the fourth floor.' },
+      { cloze:'Please ___ the file to the email.', answers:['attach'], ja:'メールにファイルを添付してください。', hira:'めーるに ふぁいるを てんぷ してください。', full:'Please attach the file to the email.' },
+      { cloze:'Regular ___ will start at noon.', answers:['maintenance'], ja:'通常のメンテナンスは正午に開始します。', hira:'つうじょうの めんてなんすは しょうごに かいし します。', full:'Regular maintenance will start at noon.' },
+      { cloze:'He sent the travel ___ last night.', answers:['invoice'], ja:'彼は昨夜、出張の請求書を送りました。', hira:'かれは さくや、しゅっちょうの せいきゅうしょを おくりました。', full:'He sent the travel invoice last night.' },
+      { cloze:'Please leave your ___ after the training.', answers:['feedback'], ja:'研修後にフィードバックをお願いします。', hira:'けんしゅうごに ふぃーどばっくを おねがいします。', full:'Please leave your feedback after the training.' },
     ];
 
     const READING = [
-      { en:'The train will leave at 7:30.', ja:'電車は7時30分に出発します。', hira:'でんしゃは しちじ さんじゅっぷんに しゅっぱつします。' },
-      { en:'Please show your ticket at the entrance.', ja:'入り口で切符を見せてください。', hira:'いりぐちで きっぷを みせてください。' },
-      { en:'The store will be closed on Sunday.', ja:'店は日曜日に休みです。', hira:'みせは にちようびに やすみです。' },
-      { en:'Welcome to City Hotel. Free breakfast is included.', ja:'シティホテルへようこそ。朝食は無料です。', hira:'してぃほてるへ ようこそ。ちょうしょくは むりょうです。' },
-      { en:'Big Sale! All shoes are 50% off this weekend.', ja:'大セール！今週末は靴が半額です。', hira:'だいせーる！こんしゅうまつは くつが はんがくです。' },
-      { en:'Notice: The library will close at 5 p.m. today.', ja:'お知らせ：図書館は今日午後5時に閉まります。', hira:'おしらせ：としょかんは きょう ごご ごじに しまります。' },
-      { en:'Email: Your flight has been delayed by one hour.', ja:'メール：あなたの飛行機は1時間遅れました。', hira:'めーる：あなたの ひこうきは いちじかん おくれました。' },
-      { en:'Caution: Please do not leave bags unattended.', ja:'注意：荷物を置きっぱなしにしないでください。', hira:'ちゅうい：にもつを おきっぱなしに しないで ください。' },
-      { en:'Meeting Room B is on the second floor.', ja:'会議室Bは2階にあります。', hira:'かいぎしつ びーは にかいに あります。' },
-      { en:'Lunch special: Soup and sandwich for five dollars.', ja:'ランチスペシャル：スープとサンドイッチが5ドルです。', hira:'らんち すぺしゃる：すーぷと さんどいっちが ごどるです。' },
-      { en:'Message: I will arrive at the station at 6:15.', ja:'メッセージ：私は6時15分に駅に着きます。', hira:'めっせーじ：わたしは ろくじ じゅうごふんに えきに つきます。' },
-      { en:'Announcement: The bus to the airport leaves from Gate 3.', ja:'案内：空港行きのバスは3番ゲートから出ます。', hira:'あんない：くうこういきの ばすは さんばん げーとから でます。' },
+      { en:'Notice: The elevator will be under maintenance from 12:00 to 13:00.', ja:'お知らせ：エレベーターは12時から13時までメンテナンスです。', hira:'おしらせ：えれべーたーは じゅうにじから じゅうさんじまで めんてなんすです。' },
+      { en:'Email: Please submit your receipts by Friday to follow company policy.', ja:'メール：会社の規定に従い、金曜日までに領収書を提出してください。', hira:'めーる：かいしゃの きていに したがい、きんようび までに りょうしゅうしょを ていしゅつ してください。' },
+      { en:'Announcement: The department meeting will start at 9:15 in Room B.', ja:'案内：部署会議は9時15分にB室で開始します。', hira:'あんない：ぶしょ かいぎは くじ じゅうごふんに びーしつで かいし します。' },
+      { en:'Reminder: Attach the brochure when replying to customers.', ja:'リマインダー：お客様へ返信する際はパンフレットを添付してください。', hira:'りまいんだー：おきゃくさまへ へんしん する さいは ぱんふれっとを てんぷ してください。' },
+      { en:'Update: The shipment has been delayed due to bad weather.', ja:'連絡：悪天候のため出荷が遅れています。', hira:'れんらく：あくてんこうの ため しゅっかが おくれて います。' },
+      { en:'Memo: Please use Conference Room 2 for interviews today.', ja:'メモ：本日の面接は会議室2を使用してください。', hira:'めも：ほんじつの めんせつは かいぎしつ に を しよう してください。' },
+      { en:'Poster: New customers receive a 10% discount this month.', ja:'ポスター：今月は新規のお客様に10％割引。', hira:'ぽすたー：こんげつは しんきの おきゃくさまに じゅっぱーせんと わりびき。' },
+      { en:'Message: Can we reschedule the appointment for next week?', ja:'メッセージ：予約を来週に予定変更できますか。', hira:'めっせーじ：よやくを らいしゅうに よてい へんこう できますか。' },
+      { en:'Guide: Leave feedback at the front desk after the training.', ja:'案内：研修後は受付でフィードバックを残してください。', hira:'あんない：けんしゅうごは うけつけで ふぃーどばっくを のこして ください。' },
+      { en:'Note: The cafeteria will be closed on Monday.', ja:'注意：食堂は月曜日に休業します。', hira:'ちゅうい：しょくどうは げつようびに きゅうぎょう します。' },
+      { en:'Schedule: Deliver the invoice and contract before 5 p.m.', ja:'予定：午後5時までに請求書と契約書を提出してください。', hira:'よてい：ごご ごじ までに せいきゅうしょと けいやくしょを ていしゅつ してください。' },
+      { en:'Direction: The supplier’s office is next to the main entrance.', ja:'案内：納入業者のオフィスは正面入口の隣です。', hira:'あんない：のうにゅう ぎょうしゃの おふぃすは しょうめん いりぐちの となりです。' },
     ];
 
     // -------------- State & Elements --------------
@@ -274,7 +273,7 @@
         deck = SENTENCES.map(s=>({
           type:'sentence',
           front: s.ja,
-          back: s.en + '\\n' + s.ja,
+          back: s.en + '\n' + s.ja,
           hira: s.hira,
           sideLabelFront: 'Japanese sentence',
           sideLabelBack: 'Answer (EN + JA)',
@@ -283,8 +282,8 @@
         deck = QA.map(q=>({
           type:'qa',
           front: q.q_ja,
-          back: q.a_en + '\\n' + q.a_ja,
-          hira: q.q_hira + '\\n' + q.a_hira,
+          back: q.a_en + '\n' + q.a_ja,
+          hira: q.q_hira + '\n' + q.a_hira,
           sideLabelFront: 'Question (JA)',
           sideLabelBack: 'Answer (EN + JA)',
         }));
@@ -294,7 +293,7 @@
           return {
             type:'quiz',
             front: q.cloze,
-            back: q.full + '\\n' + q.ja,
+            back: q.full + '\n' + q.ja,
             hira: q.hira,
             answers: q.answers,
             choices,
@@ -306,7 +305,7 @@
         deck = READING.map(r=>({
           type:'reading',
           front: r.en,
-          back: r.en + '\\n' + r.ja,
+          back: r.en + '\n' + r.ja,
           hira: r.hira,
           sideLabelFront: 'Reading (EN)',
           sideLabelBack: 'Reading (EN + JA)',
@@ -324,14 +323,14 @@
       const content = showingFront ? item.front : item.back;
 
       // Main content & JA + hira logic
-      if((!showingFront) && (item.type==='qa' || item.type==='quiz' || item.type==='sentence' || item.type==='reading') && content.includes('\\n')){
-        const [line1, line2] = content.split('\\n'); // EN, JA
+      if((!showingFront) && (item.type==='qa' || item.type==='quiz' || item.type==='sentence' || item.type==='reading') && content.includes('\n')){
+        const [line1, line2] = content.split('\n'); // EN, JA
         els.main.innerHTML = `<div style="font-size:22px;font-weight:700" class="${item.type==='reading'?'small':''}">${line1}</div>
                               <div class="sub ${item.type==='reading'?'small':''}" style="margin-top:8px">${line2}</div>`;
         if(item.hira){
           els.hira.classList.remove('hidden');
           if(item.type==='qa'){
-            const parts = item.hira.split('\\n');
+            const parts = item.hira.split('\n');
             const hiraToShow = showingFront ? parts[0] : (parts[1] || '');
             els.hira.textContent = hiraToShow;
           } else {
@@ -343,8 +342,8 @@
         if(showingFront && (item.type==='vocab' && els.mode.value==='vocab-j2e' || item.type==='sentence' || item.type==='qa')){
           if(item.hira){
             els.hira.classList.remove('hidden');
-            if(item.type==='qa' && item.hira.includes('\\n')){
-              els.hira.textContent = item.hira.split('\\n')[0];
+            if(item.type==='qa' && item.hira.includes('\n')){
+              els.hira.textContent = item.hira.split('\n')[0];
             } else {
               els.hira.textContent = item.hira;
             }
@@ -368,12 +367,15 @@
             e.preventDefault(); e.stopPropagation();
             const norm = (s)=>s.toLowerCase().trim();
             const isCorrect = item.answers.map(a=>norm(a)).includes(norm(opt));
-            const allBtns = [...els.mcArea.querySelectorAll('button')];
-            allBtns.forEach(b=>b.disabled=true);
-            if(isCorrect){ btn.classList.add('ok'); } else { btn.classList.add('bad'); }
-            const correctBtn = allBtns.find(b => item.answers.map(a=>norm(a)).includes(norm(b.textContent)));
-            if(correctBtn) correctBtn.classList.add('ok');
-            setTimeout(()=>{ showingFront = false; render(); }, 350);
+            if(isCorrect){
+              btn.classList.add('ok');
+              const allBtns = [...els.mcArea.querySelectorAll('button')];
+              allBtns.forEach(b=>b.disabled=true);
+              setTimeout(()=>{ showingFront = false; render(); }, 350);
+            } else {
+              btn.classList.add('bad');
+              btn.disabled = true;
+            }
           }, { passive:false });
           els.mcArea.appendChild(btn);
         });
